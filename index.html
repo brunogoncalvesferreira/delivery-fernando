@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Delivery Fernando</title>
+  </head>
+  <body class="bg-slate-100 text-slate-900">
+    <!--header-->
+    <header
+      class="bg-[url(./assets/cover.jpg)] w-full h-[20rem] bg-center bg-cover relative"
+    >
+      <div class="absolute top-0 left-0 bg-slate-950/60 w-full h-full">
+        <div
+          class="max-w-4xl w-full mx-auto px-5 pt-6 flex items-center justify-between"
+        >
+          <strong class="text-2xl text-slate-50">Pizzaria JF</strong>
+
+          <div class="flex items-center gap-3">
+            <i class="ph ph-user text-xl text-slate-50"></i>
+            <a class="text-xl text-slate-50 font-semibold" href="#"
+              >Fazer login</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--main-->
+    <main class="pb-20">
+      <div class="w-full flex items-center justify-center -mt-[5.5rem] sticky">
+        <img class="w-40" src="./assets/logo.png" alt="Logo da Pizzaria" />
+      </div>
+
+      <div class="max-w-4xl w-full mx-auto px-5">
+        <h1 class="text-center mt-8 text-3xl font-semibold">
+          Pizzaria pediu chegou
+        </h1>
+
+        <div class="border-2 mt-10"></div>
+
+        <!--informação entrega, retirada, pagamento-->
+        <div class="grid md:grid-cols-3 gap-8 mt-10">
+          <div class="flex flex-col gap-2 items-center">
+            <h2>Entrega</h2>
+            <strong>30 min - 40 min</strong>
+          </div>
+          <div class="flex flex-col gap-2 items-center">
+            <h2>Retirada</h2>
+            <strong>20 min</strong>
+          </div>
+          <div class="flex flex-col gap-2 items-center">
+            <h2>Forma de pagamento</h2>
+            <div class="space-x-2">
+              <strong>Débito</strong>
+              <strong>Crédito</strong>
+              <strong>Pix</strong>
+            </div>
+          </div>
+        </div>
+
+        <!--horários de funcionamento-->
+        <div class="mt-20">
+          <h2 class="text-center text-2xl">Funcionamento</h2>
+          <div class="flex items-center justify-center gap-2 mt-2">
+            <span class="font-bold">Aberto</span>
+            <div class="w-4 h-4 bg-green-600 rounded-full animate-pulse"></div>
+          </div>
+
+          <div class="overflow-auto border mt-10 rounded">
+            <table class="w-full">
+              <thead class="border bg-slate-900">
+                <td class="p-6 text-center text-slate-50">Seg</td>
+                <td class="p-6 text-center text-slate-50">Ter</td>
+                <td class="p-6 text-center text-slate-50">Qua</td>
+                <td class="p-6 text-center text-slate-50">Qui</td>
+                <td class="p-6 text-center text-slate-50">Sex</td>
+                <td class="p-6 text-center text-slate-50">Sab</td>
+                <td class="p-6 text-center text-slate-50">Dom</td>
+              </thead>
+              <tbody>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+                <td class="p-6 text-center">19h ás 23h</td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!--cardápio-->
+        <div class="mt-20" id="cardapio">
+          <h2 class="text-center text-2xl">Nossa cardápio</h2>
+          <ul class="flex justify-between flex-col gap-3 md:flex-row mt-8">
+            <li class="w-full">
+              <a
+                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
+                href="#combos"
+              >
+                Combos
+              </a>
+            </li>
+            <li class="w-full">
+              <a
+                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
+                href="#pizzas"
+              >
+                Pizzas
+              </a>
+            </li>
+            <li class="w-full">
+              <a
+                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
+                href="#esfihas"
+              >
+                Esfihas
+              </a>
+            </li>
+            <li class="w-full">
+              <a
+                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
+                href="#bebidas"
+              >
+                Bebidas
+              </a>
+            </li>
+          </ul>
+
+          <div
+            class="mt-8 flex items-center gap-3 border border-slate-900 rounded p-4"
+          >
+            <i class="ph ph-magnifying-glass text-2xl text-slate-900"></i>
+            <input
+              class="bg-transparent outline-none text-lg w-full"
+              type="text"
+              placeholder="Pesquisar cardário"
+            />
+          </div>
+
+          <!--lista com os lanches-->
+          <div class="mt-20" id="combos">
+            <h4 class="text-2xl mb-6">Combos</h4>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/combo.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/combo.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/combo.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-20" id="pizzas">
+            <h4 class="text-2xl mb-6">Pizzas</h4>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/pizza.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/pizza.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/pizza.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-20" id="esfihas">
+            <h4 class="text-2xl mb-6">Esfihas</h4>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/esfiha.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/esfiha.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/esfiha.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-20" id="bebidas">
+            <h4 class="text-2xl mb-6">Bebidas</h4>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/coca.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/coca.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+              <div class="bg-slate-900 rounded overflow-hidden">
+                <img
+                  class="w-full h-52 object-cover"
+                  src="./assets/coca.jpg"
+                  alt="Imagem ilustrativa dos nossos produtos"
+                />
+                <div class="p-2 my-4">
+                  <h3 class="text-slate-50 text-xl mb-5">Nome do lanche</h3>
+                  <p class="text-lg text-slate-200">R$ 34,99</p>
+                </div>
+                <button
+                  class="w-full bg-slate-700 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
+                >
+                  Adicionar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-40 w-full h-72 bg-slate-900 relative">
+      <div
+        class="max-w-4xl w-full mx-auto px-5 flex items-center justify-center"
+      >
+        <p class="mt-20 w-64 text-2xl text-center text-slate-200">
+          Desenvolvido por
+          <span class="text-blue-600">Vórtice Corporation</span>
+        </p>
+      </div>
+      <div class="w-full h-20 bg-slate-500 absolute bottom-0">
+        <div
+          class="max-w-4xl w-full h-full mx-auto px-5 flex items-center justify-center"
+        >
+          <ul class="flex gap-8">
+            <li>
+              <a
+                class="text-slate-50 text-2xl font-semibold hover:text-slate-200"
+                href="#cardapio"
+                >Cardário</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-slate-50 text-2xl font-semibold hover:text-slate-200"
+                href="#"
+                >Meu pedido</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

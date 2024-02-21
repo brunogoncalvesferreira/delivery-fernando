@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <title>Delivery Fernando</title>
   </head>
   <body class="bg-slate-100 text-slate-900">
@@ -14,13 +15,13 @@
     >
       <div class="absolute top-0 left-0 bg-slate-950/60 w-full h-full">
         <div
-          class="max-w-4xl w-full mx-auto px-5 pt-6 flex items-center justify-between"
+          class="max-w-4xl w-full mx-auto px-3 pt-6 flex items-center justify-between"
         >
           <strong class="text-2xl text-slate-50">Pizzaria JF</strong>
 
           <div class="flex items-center gap-3">
             <i class="ph ph-user text-xl text-slate-50"></i>
-            <a class="text-xl text-slate-50 font-semibold" href="#"
+            <a class="text-xl text-slate-50 font-semibold" id="#"
               >Fazer login</a
             >
           </div>
@@ -29,12 +30,12 @@
     </header>
 
     <!--main-->
-    <main class="pb-20">
+    <main>
       <div class="w-full flex items-center justify-center -mt-[5.5rem] sticky">
         <img class="w-40" src="./assets/logo.png" alt="Logo da Pizzaria" />
       </div>
 
-      <div class="max-w-4xl w-full mx-auto px-5">
+      <div class="max-w-4xl w-full mx-auto px-3">
         <h1 class="text-center mt-8 text-3xl font-semibold">
           Pizzaria pediu chegou
         </h1>
@@ -96,381 +97,94 @@
         <!--cardápio-->
         <div class="mt-20" id="cardapio">
           <h2 class="text-center text-2xl">Nossa cardápio</h2>
-          <ul class="flex justify-between flex-col gap-2 md:flex-row mt-8">
-            <li class="w-full">
-              <a
-                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
-                href="#combos"
-              >
-                Combos
-              </a>
-            </li>
-            <li class="w-full">
-              <a
-                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
-                href="#pizzas"
-              >
-                Pizzas
-              </a>
-            </li>
-            <li class="w-full">
-              <a
-                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
-                href="#esfihas"
-              >
-                Esfihas
-              </a>
-            </li>
-            <li class="w-full">
-              <a
-                class="bg-slate-900 block md:w-52 h-12 rounded text-slate-50 flex items-center justify-center hover:bg-slate-950"
-                href="#bebidas"
-              >
-                Bebidas
-              </a>
-            </li>
-          </ul>
+          <div class="flex flex-col gap-2 md:flex-row justify-between mt-10">
+            <button
+              class="bg-gray-900 hover:bg-gray-950 text-gray-100 font-bold py-2 px-4 w-full rounded"
+              onclick="handleFilterProduct('all')"
+            >
+              Todos
+            </button>
+
+            <button
+              class="bg-gray-900 hover:bg-gray-950 text-gray-100 font-bold py-2 px-4 w-full rounded"
+              onclick="handleFilterProduct('Combos')"
+            >
+              Combos
+            </button>
+
+            <button
+              class="bg-gray-900 hover:bg-gray-950 text-gray-100 font-bold py-2 px-4 w-full rounded"
+              onclick="handleFilterProduct('Pizzas')"
+            >
+              Pizzas
+            </button>
+
+            <button
+              class="bg-gray-900 hover:bg-gray-950 text-gray-100 font-bold py-2 px-4 w-full rounded"
+              onclick="handleFilterProduct('Esfihas')"
+            >
+              Esfihas
+            </button>
+
+            <button
+              class="bg-gray-900 hover:bg-gray-950 text-gray-100 font-bold py-2 px-4 w-full rounded"
+              onclick="handleFilterProduct('Bebidas')"
+            >
+              Bebidas
+            </button>
+          </div>
 
           <div
             class="mt-8 flex items-center gap-3 border border-slate-900 rounded p-4"
           >
             <i class="ph ph-magnifying-glass text-2xl text-slate-900"></i>
+            <!--input de pesquisa-->
             <input
               class="bg-transparent outline-none text-lg w-full"
               type="text"
               placeholder="Pesquisar cardário"
+              id="search"
             />
           </div>
 
           <!--lista com os lanches-->
-          <div class="mt-20" id="combos">
-            <h4 class="text-2xl mb-6">Combos</h4>
-            <div class="space-y-6">
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                      src="./assets/combo.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"       
-                      src="./assets/combo.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/combo.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-            </div>
-          </div>
-
-          <div class="mt-20" id="pizzas">
-            <h4 class="text-2xl mb-6">Pizzas</h4>
-            <div class="space-y-6">
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                      src="./assets/pizza.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/pizza.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/pizza.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-            </div>
-          </div>
-
-          <div class="mt-20" id="esfihas">
-            <h4 class="text-2xl mb-6">Esfihas</h4>
-            <div class="space-y-6">
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                      src="./assets/esfiha.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/esfiha.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/esfiha.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-            </div>
-          </div>
-
-          <div class="mt-20" id="bebidas">
-            <h4 class="text-2xl mb-6">Bebidas</h4>
-            <div class="space-y-6">
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                      src="./assets/coca.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/coca.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
-              <div class="flex flex-col gap-4 bg-slate-200 rounded overflow-hidden p-6">
-                
-                <div class="flex gap-6">
-                    <img
-                      class="w-28 h-28 object-cover rounded-md"
-                    src="./assets/coca.jpg"
-                      alt="Imagem ilustrativa dos nossos produtos"
-                    />
-                    <div class="space-y-6">
-                      <h3 class="text-slate-700 text-xl mb-5">Nome do lanche</h3>
-                      <p class="text-slate-600 text-sm">Pão especial, 2 Hambúrgueres de Picanha Bovina, Bacon, Maionese, Queijo Mussarela, Presunto, e Alface, Tomate, e Pepino.</p>
-                      <p class="text-xl text-slate-600 font-bold">R$ 34,99</p>
-                    </div>
-                </div>
-          
-                  
-                  <button
-                  class="w-full rounded-md bg-slate-900 hover:bg-slate-800 transition text-slate-50 font-bold py-4"
-                  >
-                    Adicionar
-                  </button>
-                </div>
-                
+          <div>
+            <div class="mt-20">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-4"
+                id="list"
+              ></div>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="mt-40 w-full h-72 bg-slate-900 relative">
+    <footer class="mt-10 w-full h-72 bg-slate-900 relative">
       <div
-        class="max-w-4xl w-full mx-auto px-5 flex items-center justify-center"
+        class="max-w-4xl w-full mx-auto px-3 flex items-center justify-center"
       >
         <p class="mt-20 md:w-64 md:text-2xl text-center text-slate-200">
-            Desenvolvido por
+          Desenvolvido por
           <span class="text-blue-600">Vórtice Corporation</span>
         </p>
       </div>
       <div class="w-full h-20 bg-slate-500 absolute bottom-0">
         <div
-          class="max-w-4xl w-full h-full mx-auto px-5 flex items-center justify-center"
+          class="max-w-4xl w-full h-full mx-a3to px-5 flex items-center justify-center"
         >
           <ul class="flex gap-8">
             <li>
               <a
                 class="text-slate-50 md:text-2xl font-semibold hover:text-slate-200"
-                href="#cardapio"
+                id="#cardapio"
                 >Cardário</a
               >
             </li>
             <li>
               <a
                 class="text-slate-50 md:text-2xl font-semibold hover:text-slate-200"
-                href="#"
+                id="#"
                 >Meu pedido</a
               >
             </li>
@@ -478,5 +192,6 @@
         </div>
       </div>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>

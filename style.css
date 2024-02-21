@@ -1,0 +1,15 @@
+#logo {
+  animation: animate-logo 0.7s 0.2s backwards;
+}
+
+@keyframes animate-logo {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
